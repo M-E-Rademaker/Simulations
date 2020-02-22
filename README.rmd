@@ -1,0 +1,16 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+This repository contains the code necessary to replicate the (simulation) 
+results for:
+
+- Rademaker, M. E. & Schuberth, F. & Dijkstra, T. K. (2019). Measurement Error 
+  Correlation within Blocks of Indicators in Consistent Partial Least Squares. 
+  Internet Research. Vol. 29. pp: 448-463.
+  
+- Schuberth, F. & Rademaker, M. E. & Henseler, Joerg (under review). Estimating and 
+  Testing Second-Order Constructs using PLS-PM: the Case of Composites of Composites. 
+  Journal xxx. Vol. xx. pp: x-xx .
