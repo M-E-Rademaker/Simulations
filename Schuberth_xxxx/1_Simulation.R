@@ -13,10 +13,10 @@ rm(list = ls())
 
 # General Preparation ==========================================================
 ## Install packages if necessary
-if(!require(foreach)) install.packages("foreach")
-if(!require(doParallel)) install.packages("doParallel")
-if(!require(parallel)) install.packages("parallel")
-if(!require(cSEM)) install.packages("cSEM")
+#if(!require(foreach)) install.packages("foreach")
+#if(!require(doParallel)) install.packages("doParallel")
+#if(!require(parallel)) install.packages("parallel")
+#if(!require(cSEM)) install.packages("cSEM")
 
 ## Load packages 
 library(cSEM)       # (version: 0.1.0)
@@ -33,7 +33,7 @@ source("0_0_HelperFunctions.R")
 ### Preparation ----------------------------------------------------------------
 # Things to loop over 
 sample_size      <- list(100, 300, 500, 1000)
-number_of_draws  <- 500
+number_of_draws  <- 2
 number_boot_reps <- 1000
 dgp              <- list(
   "Sigma_dgp_2ndorder" = Sigma_dgp_2ndorder, 
@@ -44,11 +44,12 @@ model            <- mget(c("model_2ndorder", "model_alt"))
 weighting_scheme <- c("centroid", "factorial", "path") 
 
 ## Test 
-sample_size      <- list(100)
-number_of_draws  <- 3
-number_boot_reps <- 10
-weighting_scheme <- c("centroid")
+#sample_size      <- list(100)
+#number_of_draws  <- 3
+#number_boot_reps <- 10
+#weighting_scheme <- c("centroid")
 number_cores     <- parallel::detectCores()
+number_cores
 ### Monte Carlo simulation -----------------------------------------------------
 
 ## List hierachy of the resulting simulation object (bottom to top)
@@ -242,4 +243,4 @@ closeAllConnections() # close connection to relase RAM
 # Save objects =================================================================
 
 save(list = c("sim", "sample_size", "number_of_draws"),
-     file = "Data_simulation/sim_hpc.RData")
+     file = "sim_hpc.RData")
