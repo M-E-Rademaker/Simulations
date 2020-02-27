@@ -41,7 +41,7 @@ dgp_and_model    <- purrr::map(purrr::transpose(list("Dgp" = dgps, "Model" = mod
 
 # Small design
 sample_size     <- c(100, 200, 500)
-number_of_draws <- 3
+number_of_draws <- 2
 number_of_boot_reps <- 499
 dgp_and_model   <- dgp_and_model[c(1, 3, 6)] %>% 
   map(.f = ~ .x[c(2, 4)])
