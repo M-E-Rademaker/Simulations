@@ -14,3 +14,6 @@ results for:
 - Schuberth, F. & Rademaker, M. E. & Henseler, Joerg (under review). Estimating and 
   Testing Second-Order Constructs using PLS-PM: the Case of Composites of Composites. 
   Journal xxx. Vol. xx. pp: x-xx .
+  
+- Rademaker, M. E. & Schuberth, F. & Groß S. (XXXX). To be determined. 
+  Some Journal. Vol. XX. pp: XXX-XXX.
