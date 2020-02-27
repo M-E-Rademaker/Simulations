@@ -16,5 +16,5 @@ sudo echo "The end time was: ${END}" >> Timing.txt
 # If succesfull do git pull and push
 git pull
 git add .
-git commit -m "Test simulation 2 runs"
+git commit -m "Simulation results QWF3-1"
 git push 
