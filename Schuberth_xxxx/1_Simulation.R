@@ -33,7 +33,7 @@ source("0_0_HelperFunctions.R")
 ### Preparation ----------------------------------------------------------------
 # Things to loop over 
 sample_size      <- list(100, 300, 500, 1000)
-number_of_draws  <- 2
+number_of_draws  <- 200
 number_boot_reps <- 1000
 dgp              <- list(
   "Sigma_dgp_2ndorder" = Sigma_dgp_2ndorder, 
@@ -243,4 +243,4 @@ closeAllConnections() # close connection to relase RAM
 # Save objects =================================================================
 
 save(list = c("sim", "sample_size", "number_of_draws"),
-     file = "sim_hpc_2runs.RData")
+     file = "sim_hpc_200runs1.RData")
