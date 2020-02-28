@@ -16,5 +16,9 @@ sudo echo "The end time was: ${END}" >> Timing.txt
 # If succesfull do git pull and push
 git pull
 git add .
+<<<<<<< HEAD
 git commit -m "Simulation results QWF3-2"
+=======
+git commit -m "Simulation results QWF3-1"
+>>>>>>> 860797387a65cb6ed8018064027755b6812141ac
 git push 
