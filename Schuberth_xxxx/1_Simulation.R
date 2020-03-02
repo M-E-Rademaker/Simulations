@@ -32,7 +32,7 @@ source("0_0_HelperFunctions.R")
 # Simulation ===================================================================
 ### Preparation ----------------------------------------------------------------
 # Things to loop over 
-sample_size      <- list(100, 300, 500, 1000)
+sample_size      <- list(100, 300, 500, 800, 1000, 1500)
 number_of_draws  <- 200
 number_boot_reps <- 1000
 dgp              <- list(

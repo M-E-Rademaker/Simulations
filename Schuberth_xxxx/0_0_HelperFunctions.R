@@ -6,14 +6,14 @@
 #
 #   Topic: Helper functions
 #
-#   Last modified: 22.02.2020 (by Manuel Rademaker)
+#   Last modified: 17.02.2020 (by Manuel Rademaker)
 #
 ################################################################################
 ### General Preparation --------------------------------------------------------
 
 ## Install if not already installed
-if(!require(MASS)) install.packages("MASS")
-if(!require(dplyr)) install.packages("dplyr")
+# if(!require(MASS)) install.packages("MASS")
+# if(!require(dplyr)) install.packages("dplyr")
 
 # Helper functions for the simulation ==========================================
 
@@ -229,4 +229,45 @@ computeRelevant <- function(.object, .R) {
     "Test"                = out2
     # "Status_code"         = out3
   )
+}
+
+checkGuidlines <- function(.data, .model, .approach, .what) {
+  
+  # Estimate
+  if(.approach == "emb_TS") {
+    out <- csem(.data, .model, .approach_2ndorder = "mixed")
+  } else {
+    out <- csem(.data, .model)
+  }
+
+  if(.what %in% c("Weight_estimates", "Loading_estimates")) {
+    sw <- switch (.approach,
+           "TS"     = {cSEM::summarize(out)$First_stage$Estimates[[.what]]},
+           "emb_TS" = {cSEM::summarize(out)$First_stage$Estimates[[.what]][1:21, ]},
+           "RI"     = {cSEM::summarize(out)$Estimates[[.what]][c(1:3, 10:21, 4:9), ]}
+    )
+    
+    sw$group <- c(rep("xi", 3), rep("c1", 2), rep("c2", 4), rep("c3", 6), rep("eta1", 3), rep("eta2", 3))
+    out1 <- round(unlist(lapply(split(sw, sw$group), function(x) min(x$Estimate))), 2)[c("xi", "eta1", "eta2", "c1", "c2", "c3")]
+    
+    if(.approach %in% c("TS", "emb_TS")) {
+      out2 <- round(min(cSEM::summarize(out)$Second_stage$Estimates[[.what]]$Estimate), 2)
+    } else {
+      if(.what == "Weight_estimates") {
+        out2 <- round(min(cSEM::summarize(out)$Estimates$Path_estimates[15:17, ]$Estimate), 2)  
+      } else {
+        out2 <- round(min(cor(out$Estimates$Construct_scores)[4:6, 7]), 2)
+      }
+    }
+  } else if(.what == "VIF") { # VIF
+    if(.approach %in% c("TS", "emb_TS")) {
+      out1 <- round(unlist(lapply(cSEM:::calculateVIFModeB(out$First_stage), max))[c("xi", "eta1", "eta2", "c1", "c2", "c3")], 1)
+      out2 <- round(unlist(lapply(cSEM:::calculateVIFModeB(out$Second_stage), max))["eta3"], 1)
+    } else {
+      out1 <- round(unlist(lapply(cSEM:::calculateVIFModeB(out), max))[c("xi", "eta1", "eta2", "c1", "c2", "c3")], 1)
+      out2 <- round(max(out$Estimates$VIF$eta3), 1)
+    }
+  }
+  names(out2) <- "eta3"
+  c(out1, out2)
 }
