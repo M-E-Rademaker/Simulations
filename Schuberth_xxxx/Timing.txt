@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 The start time was: Mon Mar  2 14:25:34 CET 2020
 The end time was: Tue Mar  3 17:46:01 CET 2020
+=======
+The start time was: Mon Mar  2 14:29:37 CET 2020
+The end time was: Tue Mar  3 17:36:07 CET 2020
+>>>>>>> 301005d58424d01c79f6d824daea366ec4b0d199
