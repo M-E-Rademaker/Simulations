@@ -243,5 +243,5 @@ closeAllConnections() # close connection to relase RAM
 # Save objects =================================================================
 
 save(list = c("sim", "sample_size", "number_of_draws"),
-     file = "sim_hpc_200runs_1.RData")
+     file = "sim_hpc_200runs_2.RData")
 
