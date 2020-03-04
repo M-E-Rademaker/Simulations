@@ -26,7 +26,7 @@ library(foreach)
 
 ## Load DGPs and Models
 load("DGPs/dgps.RData")
-load("Models/models.RData")
+load("Models/Models.RData")
 
 ## Source helper functions and models to estimate
 source("0_0_HelperFunctions.R")
