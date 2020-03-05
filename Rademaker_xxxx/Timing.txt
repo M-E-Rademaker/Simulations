@@ -1,4 +1,2 @@
-The start time was: Mon Mar  2 15:34:01 CET 2020
-The end time was: Mon Mar  2 15:34:02 CET 2020
-The start time was: Wed Mar  4 08:13:05 CET 2020
-The end time was: Wed Mar  4 08:14:32 CET 2020
+The start time was: Thu Mar  5 10:02:51 CET 2020
+The end time was: Thu Mar  5 10:03:06 CET 2020
