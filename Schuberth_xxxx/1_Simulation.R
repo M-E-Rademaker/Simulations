@@ -4,7 +4,7 @@
 #
 #   Topic: Monte Carlo Simulation
 #
-#   Last modified: 17.02.2020 (by Manuel Rademaker)
+#   Last modified: 04.03.2020 (by Manuel Rademaker)
 #
 #   Notes: none
 #
@@ -244,4 +244,4 @@ closeAllConnections() # close connection to relase RAM
 # Save objects =================================================================
 
 save(list = c("sim", "sample_size", "number_of_draws"),
-     file = "Data_simulation/sim_hpc_1.RData")
+     file = "Data_simulation/sim_hpc_56.RData")
