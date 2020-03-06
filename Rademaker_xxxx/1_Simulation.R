@@ -35,12 +35,12 @@ source("0_0_HelperFunctions.R")
 ### Preparation ----------------------------------------------------------------
 # Things to loop over (full design)
 sample_size      <- seq(100, 1000, by = 50)
-number_of_draws  <- 400
-number_of_boot_reps <- 499
+number_of_draws  <- 600
+number_of_boot_reps <- 1000
 dgp_and_model    <- purrr::map(purrr::transpose(list("Dgp" = dgps, "Model" = models)), purrr::transpose)
 
 #Small design
-sample_size     <- c(100, 200, 500)
+#sample_size     <- c(100, 200, 500)
 # number_of_draws <- 3
 # number_of_boot_reps <- 10
 dgp_and_model   <- dgp_and_model[c(1, 3, 6)] %>%
@@ -103,7 +103,7 @@ closeAllConnections() # close connection to relase RAM
 # Save objects =================================================================
 
 save(list = c("sim", "sample_size"),
-     file = "sim_hpc_61.RData")
+     file = "sim_hpc_61_larger.RData")
 
 #
 # i = 3; j = 3; n = 200
