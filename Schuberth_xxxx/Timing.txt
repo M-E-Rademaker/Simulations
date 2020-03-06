@@ -1,2 +1,17 @@
+<<<<<<< HEAD
 The start time was: Wed Mar  4 11:35:47 CET 2020
 The end time was: Fri Mar  6 02:16:02 CET 2020
+=======
+<<<<<<< HEAD
+The start time was: Wed Mar  4 11:33:16 CET 2020
+The end time was: Thu Mar  5 14:54:01 CET 2020
+=======
+<<<<<<< HEAD
+The start time was: Wed Mar  4 11:31:45 CET 2020
+The end time was: Thu Mar  5 14:40:28 CET 2020
+=======
+The start time was: Wed Mar  4 11:37:51 CET 2020
+The end time was: Thu Mar  5 14:21:05 CET 2020
+>>>>>>> 170d9c7e786f6259fe025cc0f2e714cf5b174477
+>>>>>>> 1fded007b608411baa80ef9a9cb68ff50fdba4c3
+>>>>>>> 6f5426c51a131742703c047d0853b982949dc428
